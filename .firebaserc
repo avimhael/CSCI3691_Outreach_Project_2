@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "csci-3691"
+  },
+  "targets": {
+    "csci-3691": {
+      "hosting": {
+        "kanban-app": [
+          "csci-3691"
+        ]
+      }
+    }
+  }
+}

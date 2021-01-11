@@ -1,0 +1,77 @@
+<div [ngClass]="['card', 'collapsedCard']" *ngIf="props.type === 'collapsed'">
+  <div class="collapsedCardHeader"></div>
+  <div [ngClass]="['cardContent', 'collapsedCardContent']">
+    <div class="headerDetails">
+      <div style="display:flex">
+        <fa-icon [icon]="faCircle" *ngIf="overdue()==-1" style="color: red"></fa-icon>
+        <fa-icon [icon]="faCircle" *ngIf="overdue()==1" style="color: green"></fa-icon>
+        <fa-icon [icon]="faCircle" *ngIf="overdue()==0" style="color: orange"></fa-icon>
+        <p *ngIf="due()<=1 && due()>0" class="due"> Due: {{ this.due() | number}} day</p>
+        <p *ngIf="due()>1"class="due"> Due: {{ due() | number}} days</p>
+        <p *ngIf="due()< -1"class="due"> Due: {{ -due() | number}} ago</p>
+        <p *ngIf="due() ==-1"class="due"> Due: 1 day ago</p>
+        <p *ngIf="due()==0"class="due">Due: Today</p>
+      </div>
+      <div>
+        <p><fa-icon [icon]="faWeightHanding" style="margin-right: 2px"> </fa-icon>{{props.weight}}</p>
+      </div>
+    </div>
+    <p [ngClass]="['title', 'collapsedTitle']">{{ props.title }}</p>
+    <p (click)="expand()" class="seeMoreButton">See Details</p>
+  </div>
+</div>
+
+<div [ngClass]="['card', 'expandedCard']" *ngIf="props.type === 'expanded'">
+  <div class="expandedCardHeader">
+    <div>
+      <fa-icon
+        class="modalExpandIcon"
+        (click)="openDialog()"
+        [icon]="faExpandAlt"
+        size="lg"
+      ></fa-icon>
+    </div>
+   <div>
+      <fa-icon
+        class="deleteCardIcon"
+        (click)="onDeleteClick()"
+        [icon]="faTimes"
+        size="lg"
+      ></fa-icon>
+    </div>
+  </div>
+  <div class="cardContent">
+    <div class="headerDetails">
+      <div style="display:flex">
+        <fa-icon [icon]="faCircle" *ngIf="overdue()==-1" style="color: red"></fa-icon>
+        <fa-icon [icon]="faCircle" *ngIf="overdue()==1" style="color: green"></fa-icon>
+        <fa-icon [icon]="faCircle" *ngIf="overdue()==0" style="color: orange"></fa-icon>
+        <p *ngIf="due()<=1 && due()>0" class="due"> Due: {{ due() | number}} day</p>
+        <p *ngIf="due()>1"class="due"> Due: {{ due() | number}} days</p>
+        <p *ngIf="due()< -1"class="due"> Due: {{ -due() | number}} ago</p>
+        <p *ngIf="due() ==-1"class="due"> Due: 1 day ago</p>
+        <p *ngIf="due()==0"class="due">Due: Today</p>
+      </div>
+      <div>
+        <p><fa-icon [icon]="faWeightHanding" style="margin-right: 2px"> </fa-icon>{{props.weight}}</p>
+      </div>
+    </div>
+    <p class="title">{{ props.title }}</p>
+    <p class="description">{{ props.details }}</p>
+    <div style="display: flex; align-items: center">
+      <p style="margin: 0px" class="headerDetails">Tags:</p>
+      <div class="tag">{{ props.tags[0] }}</div>
+      <p
+        (click)="openDialog()"
+        class="seeMoreTags"
+        *ngIf="props.tags.length > 1"
+      >
+        See More...
+      </p>
+    </div>
+    <div class="expandedFooter">
+      <p class="owner">{{ props.owner }}</p>
+      <p (click)="collapse()" class="seeMoreButton">Hide Details</p>
+    </div>
+  </div>
+</div>

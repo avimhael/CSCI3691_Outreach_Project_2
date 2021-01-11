@@ -1,0 +1,18 @@
+<div class="list-header navbar">
+  <div class="navbar-start">
+    <div class="navbar-buttons">
+      <button class="button is-primary" (click)="createNewDbEntry()">+ Create New Board</button>
+    </div>
+  </div>
+</div>
+
+<div class="board-list">
+  <div *ngFor="let board of boards" >
+    <a href="board/{{board.id}}">
+      <div class="board-entry">
+        <h1>{{board.name}}</h1>
+        <h3 class="board-entry-desc">{{board.description}}</h3>
+      </div>
+    </a>
+  </div>
+</div>

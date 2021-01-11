@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Create a new board</h1>
+<div mat-dialog-content>
+    <input placeholder="Name" matInput [(ngModel)]="data.name">
+    <input placeholder="Name" matInput [(ngModel)]="data.description">
+    <div class="checkbox">
+      <p>Private Board?</p>
+      <input matInput type="checkbox" name="checkbox"  [(ngModel)]="data.isPrivate">
+    </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

@@ -1,0 +1,74 @@
+.loginPage {
+}
+
+.title {
+  font-family: "DM Sans Display";
+  margin-top: 40px;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  width: 7em;
+  height: 7em;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 30%;
+}
+
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login-button {
+  width: 75%;
+  max-width: 340px;
+  height: 71px;
+  min-height: 35px;
+  margin: .5em auto auto;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-color: #032B43;
+  border-radius: 5px;
+  color: #DFDFDF;
+  font-family: "DM Sans Display";
+  font-size: large;
+}
+
+.inputStyles, label {
+}
+
+.inputStyles {
+  height: 55px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  width: auto;
+}
+
+#signUp {
+  font-family: "DM Sans Display";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 25px;
+  /* or 179% */
+
+  text-align: center;
+  letter-spacing: 0.18em;
+  text-decoration-line: none;
+
+  /* Navy */
+
+  color: #032B43;
+  border-radius: 4px;
+  margin: 15px;
+}

@@ -1,0 +1,32 @@
+.html {
+  background-image: url("./assets/greenbg.jpg");
+  background-size: cover;
+}
+* {
+  font-family: DM sans-serif !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+html{
+  overflow-y: auto;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: scroll;
+  background-color: #f7f7f7;
+}
+
+.white-dialog .mat-dialog-container {
+  background: white;
+  padding: 0;
+  color: black;
+  border-radius: 16px;
+}
+
+.white-dialog .mat-h1 {
+  font-family: DM sans-serif !important;
+}

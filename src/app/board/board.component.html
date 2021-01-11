@@ -1,0 +1,22 @@
+<div class="board-header navbar">
+  <div class="navbar-start">
+    <div class="navbar-buttons">
+      <app-create [db] = "db" (createdFinished)="cardCreatedListener($event)"></app-create>
+      <button class="button is-primary" (click)="newColumn()">New column</button>
+      <button class="button is-primary" (click)="updateDbEntry()">update</button>
+      <button class="button is-primary" (click)="loadFromDb(boardId)">load</button>
+      <button class="button is-primary" (click)="deleteDbEntry()">delete</button>
+    </div>
+  </div>
+  <div class="navbar-end">
+    <p class="board-title">{{boardName}}</p>
+  </div>
+</div>
+<div class="board">
+    <div class="board-columns" cdkDropListGroup>
+        <app-column [db] = "db"  (deleteCalled)=deleteCol($event)
+                    *ngFor="let column of cols" [id] = "column.id" [title]="column.title"
+                    [issueList]="column.issues" [boardId]="boardId" (cardDeletedEmitter)="deleteCard($event)">
+        </app-column>
+    </div>
+</div>

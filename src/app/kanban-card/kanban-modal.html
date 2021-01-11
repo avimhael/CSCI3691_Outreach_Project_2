@@ -1,0 +1,68 @@
+<div *ngIf="!this.isEditing">
+  <div class="cardHeader">
+    <p class="modalEditText" (click)="editCard()">Edit</p>
+  </div>
+  <div class="cardContent">
+    <div class="headerDetails">
+        <p><fa-icon [icon]="faWeightHanding" style="margin-right: 2px"> </fa-icon>{{data.weight}}</p>
+      <div style="display:flex">
+        <fa-icon [icon]="faCircle" *ngIf="overdue()==-1" style="color: red"></fa-icon>
+        <fa-icon [icon]="faCircle" *ngIf="overdue()==1" style="color: green"></fa-icon>
+        <fa-icon [icon]="faCircle" *ngIf="overdue()==0" style="color: orange"></fa-icon>
+        <p *ngIf="due()<=1 && due()>0" class="due"> Due: {{ this.due() | number}} day</p>
+        <p *ngIf="due()>1"class="due"> Due: {{ due() | number}} days</p>
+        <p *ngIf="due()< -1"class="due"> Due: {{ -due() | number}} ago</p>
+        <p *ngIf="due() ==-1"class="due"> Due: 1 day ago</p>
+        <p *ngIf="due()==0"class="due">Due: Today</p>
+      </div>
+    </div>
+    <h1 class="title">{{data.title}}</h1>
+    <p class="description">{{ data.details }}</p>
+    <p style="margin-bottom: 0px" class="titleCallout">Tags</p>
+    <div class="tags">
+      <div class="tag" *ngFor="let tag of this.tags">{{tag}}</div>
+    </div>
+    <div class="expandedFooter">
+      <p class="owner">{{ data.owner }}</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="this.isEditing">
+  <div class="cardHeader">
+    <p class="modalEditText" (click)="finishEditCard()">Done</p>
+  </div>
+  <div class="cardContent">
+    <div class="headerDetails">
+      <div>
+        <fa-icon [icon]="faWeightHanding" style="margin-right: 2px"> </fa-icon>
+        <input class="modalInput" value="{{data.weight}}" />
+      </div>
+      <p class="onTime" style="margin: 0px">
+        <span class="titleCallout">Due in:</span>
+        <input class="modalInput" value="{{due()}} Days" />
+      </p>
+    </div>
+    <h1 class="title">
+      <input class="modalTitleInput" value="{{data.title}}" />
+    </h1>
+    <input
+      style="width: 100%"
+      class="modalDescriptionInput"
+      value="{{data.details}}"
+    />
+    <p style="margin-bottom: 0px" class="titleCallout">Tags</p>
+    <div
+      class="tags"
+      style="display: flex; flex-direction: column; align-items: flex-start"
+    >
+      <input style="margin-top: 10px" class="modalInput" value="New Tag" />
+      <div>
+        <div class="tag" *ngFor="let tag of this.tags">{{tag}}</div>
+      </div>
+    </div>
+    <div class="expandedFooter">
+      <p class="owner">{{ data.owner }}</p>
+    </div>
+  </div>
+</div>

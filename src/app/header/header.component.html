@@ -1,0 +1,22 @@
+<nav class="navbar has-background-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <div class="navbar-item app-name header-text">Group 5 Kanban Board</div>
+
+    <!--  Required by bulma for the hamburger menu not functional yet requires some js or css magic to work -->
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="appNavbar">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="appNavbar" class="navbar-menu">
+    <div class="navbar-end">
+      <app-navbar></app-navbar>
+      <!-- user clicks this button to logout -->
+      <a class="navbar navbar-item" [routerLink]="['/']" *ngIf="!(authService.user | async)">Login</a>
+      <a class="navbar navbar-item" [routerLink]="['/registration']" *ngIf="!(authService.user | async)">Signup</a>
+      <a class="navbar navbar-item" [routerLink]="['/login']" (click)="logout()" *ngIf="authService.user | async">Logout</a>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,157 @@
+.card {
+  display: inline-flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 16px;
+  font-family: DM sans-serif;
+}
+
+.expandedCard {
+  width: 350px;
+}
+
+.collapsedCard {
+  flex-direction: row;
+  width: 350px;
+}
+.due{
+  padding-left: 4px;
+}
+.expandedCardHeader {
+  height: 48px;
+  background: linear-gradient(135deg, #6fc7da 0%, #4e7db0 100%);
+  border-radius: 16px 16px 0px 0px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  justify-content: flex-end;
+}
+
+.expandedCardHeader:hover .modalExpandIcon {
+  opacity: 0.7;
+}
+
+.expandedCardHeader:hover .deleteCardIcon {
+  opacity: 0.7;
+}
+
+.expandedCardHeader:hover .modalExpandIcon:hover {
+  opacity: 1;
+}
+
+.expandedCardHeader:hover .deleteCardIcon:hover {
+  opacity: 1;
+}
+
+.collapsedCardHeader {
+  width: 20%;
+  background: linear-gradient(135deg, #6fc7da 0%, #4e7db0 100%);
+  border-radius: 16px 0px 0px 16px;
+}
+
+.cardContent {
+  padding: 16px;
+}
+
+.collapsedCardContent {
+  width: 80%;
+}
+
+.headerDetails {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 14px;
+  color: #6e798c;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 25px;
+  color: #081f32;
+}
+
+.collapsedTitle {
+  margin: 0;
+}
+
+.description {
+  font-size: 13px;
+  line-height: 19px;
+  color: #374a59;
+}
+
+.owner {
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 14px;
+  color: #007ae9;
+  text-transform: uppercase;
+}
+
+.tags {
+  margin-right: 16px;
+}
+
+.tag {
+  color: white;
+  background: linear-gradient(135deg, #6fc7da 0%, #4e7db0 100%);
+  padding: 8px;
+  margin: 10px;
+}
+
+.expandedFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.seeMoreButton {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 14px;
+  text-align: right;
+
+  color: #007ae9;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.seeMoreButton:hover {
+  opacity: 1;
+}
+
+.modalExpandIcon {
+  color: #ffffff;
+  opacity: 0;
+  cursor: pointer;
+
+  transition: opacity 0.3s ease-in-out;
+}
+
+.deleteCardIcon {
+  color: #ffffff;
+  opacity: 0;
+  cursor: pointer;
+  padding-left: 15px;
+
+  transition: opacity 0.3s ease-in-out;
+}
+
+.seeMoreTags {
+  margin: 0px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 14px;
+  text-align: right;
+
+  color: #007ae9;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+.seeMoreTags:hover {
+  opacity: 1;
+}

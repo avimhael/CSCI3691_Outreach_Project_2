@@ -1,0 +1,12 @@
+html {
+  font-family: DM sans-serif;
+}
+
+app-header{
+  display: block;
+  height: fit-content;
+}
+
+app-board{
+  display: block;
+}

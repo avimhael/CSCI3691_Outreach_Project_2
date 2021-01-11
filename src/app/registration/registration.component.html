@@ -1,0 +1,32 @@
+<div class="registrationPage">
+  <!-- Page Title -->
+  <div class="layoutContainer">
+    <div class="titleContainer">
+      <h1 class="title">
+        Kanban Board
+      </h1>
+      <img class="image" src="../../assets/img/logo.JPG" alt="KanbanLogo">
+    </div>
+
+    <!-- this div displays only when user is not-logged-in -->
+    <div class="formContainer">
+      <!--    <div class="form-group">-->
+      <!-- these input fields takes email and password from user -->
+      <label class="fullNamePlacement" for="fullName">Full Name:</label>
+      <input class="inputStyle" type="text" id="fullName" [(ngModel)]="fullName" placeholder="Enter your full name"/>
+      <label class="emailPlacement" for="email">Email Address:</label>
+      <input class="inputStyle" type="text" id="email" [(ngModel)]="email" placeholder="Enter email"/>
+      <label class="passwordPlacement" for="password">Password:</label>
+      <input class="inputStyle" type="password" id="password" [(ngModel)]="password" placeholder="Enter password"/>
+      <!--    </div>-->
+      <!-- user click this button to signup -->
+      <input type="button" [routerLink]="['/board']" class="button" id="signup-button" (click)="signup()"
+             [disabled]="!email || !password" value="Sign Up">
+
+    </div>
+  </div>
+  <h4 id="login"><a routerLink='/'>Already have an account? Login Now</a></h4>
+
+</div>
+
+

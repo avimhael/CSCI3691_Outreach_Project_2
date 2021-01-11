@@ -1,0 +1,27 @@
+
+<div class="loginPage">
+  <div class="layoutContainer">
+    <!-- Page Title -->
+    <div class="titleContainer">
+      <h1 class="title">
+        Kanban Board
+      </h1>
+      <img class="image" src="../../assets/img/logo.JPG" alt="KanbanLogo">
+    </div>
+    <div class="formContainer">
+      <!-- these input fields takes email and password from user -->
+      <label class="emailPlacement" for="email">Email Address:</label>
+      <input class="inputStyles" type="text" id="email" [(ngModel)]="email" placeholder="Enter email"/>
+      <label class="passwordPlacement" for="password">Password:</label>
+      <input class="inputStyles" type="password" id="password" [(ngModel)]="password" placeholder="Enter password"/>
+
+
+      <!-- user click this button to login -->
+      <input type="button" [routerLink]="['/board']" class="button" id="login-button" (click)="login()"
+             [disabled]="!email || !password" value="Login">
+    </div>
+  </div>
+  <h4 id="signUp"><a routerLink="/registration">Don't have an account? Sign Up Here!</a></h4>
+</div>
+
+

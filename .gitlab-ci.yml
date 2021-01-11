@@ -1,0 +1,23 @@
+
+before_script:
+  - npm install
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - build
+  - test
+
+build:
+  script:
+    - npm run build
+  tags: 
+    - ugrad
+# Commented out as currently it leaves the browser open and freezes waiting for some input, need to make this headless
+#test:
+#  script:
+#    - npm run test
+#  tags: 
+#    - ugrad

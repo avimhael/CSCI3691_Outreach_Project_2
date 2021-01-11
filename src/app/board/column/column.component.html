@@ -1,0 +1,14 @@
+<div class="board-column">
+  <div class="column-header">
+    <div class="column-name">
+      {{title}}
+    </div>
+    <button class="button column-delete" (click)="deleteColumn()">
+      <fa-icon [icon]="faTimes"></fa-icon>
+    </button>
+  </div>
+
+  <div cdkDropList [cdkDropListData]="issues"  class="item-list" (cdkDropListDropped)="drop($event)"  (cdkDropListEntered)="entered($event)" (cdkDropListExited)="exited($event)">
+    <app-kanban-card class="item-entry" *ngFor="let item of issues" [db]="db" (deleteCard)="cardDeleted($event)" [cdkDragData]="item" [props]="item" cdkDrag></app-kanban-card>
+  </div>
+</div>
